@@ -1,10 +1,9 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-rrule'
-import 'react-rrule/dist/index.css'
+import ReactRRule from 'react-rrule'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <ReactRRule onChange={(val) => console.log(val)} />
 }
 
 export default App
