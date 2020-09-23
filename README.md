@@ -13,17 +13,16 @@ npm install --save react-rrule
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import MyComponent from 'react-rrule'
-import 'react-rrule/dist/index.css'
+import ReactRRule from 'react-rrule'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const YourComponent = () => {
+  return <ReactRRule onChange={(val) => console.log(val)} />
 }
 ```
+
+`onChange` will return an object that contains RRule Object, PSQL RRule Object, RRule string and RRule text.
 
 ## License
 
