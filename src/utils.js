@@ -55,11 +55,11 @@ const getWkst = (wkst) => {
 }
 
 const getByweekday = (byweekday) => {
-  if (byweekday.length > 1) {
-    return byweekday.map((day) => `RRule.${day}`)
-  } else {
-    return `RRule.${byweekday[0]}`
-  }
+  // if (byweekday.length > 1) {
+  return byweekday.map((day) => `${day}`)
+  // } else {
+  //   return `RRule.${byweekday[0]}`
+  // }
 }
 
 export const getPSQLRule = (rule) => {
@@ -72,7 +72,8 @@ export const getPSQLRule = (rule) => {
   object.freq = getFreq(object.freq)
   object.wkst = getWkst(object.wkst)
   if (object.byweekday?.length) {
-    object.byweekday = getByweekday(object.byweekday)
+    object.byday = getByweekday(object.byweekday)
+    delete object.byweekday
   }
 
   master.rrule = object
